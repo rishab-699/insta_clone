@@ -1,0 +1,87 @@
+*{
+  font-size: 62.5%;
+  font-family: Poppins !important;
+  margin: 0;
+  padding: 0;
+}
+#profile-settings{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+label.label input[type="file"] {
+    position: absolute;
+    top: -1000px;
+  }
+  .label {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    padding: 5px 5px;
+    margin: 5px;
+    background: #dddddd;
+    display: inline-block;
+  }
+  .label:hover {
+    background: #5cbd95;
+  }
+  .label:active {
+    background: #9fa1a0;
+  }
+  .label:invalid + span {
+    color: #000000;
+  }
+  .label:valid + span {
+    color: #ffffff;
+  }
+  .file-icon{
+    height: 250em;
+    width: 250em;
+  }
+  
+  .userdetails{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 0.5em;
+    gap: 10em 46em;
+    
+  }
+  .expand{
+    grid-column: span 2;
+  }
+  .input-tag{
+    min-width: 100%;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    font-size: 1.3rem;
+    padding: 0.2em;
+    border-radius: 0.3em;
+  }
+  form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 56em;
+  }
+  .submit{
+    min-width: 50%;
+    margin: 0;
+    padding: 0.1em 0.5em;
+    background-color: #4cb5f9;
+    font-size: 2.5rem;
+    color: white;
+    border-color: #4cb5f9;
+    box-shadow: none;
+    border-radius: 0.4em;
+    font-weight: bold;
+    margin-top: 2em;
+  }
+
+  .error h5{
+    font-size: 1rem;
+    color: red;
+  }

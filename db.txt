@@ -1,0 +1,91 @@
+create table user(
+userName varchar(80) primary key,
+fullName varchar(100),
+password char(30),
+bio varchar(300),
+email varchar(100),
+mobileNo char(10),
+profile varchar(300)
+);
+
+create table userFollowers(
+userName varchar(80),
+follower varchar(80),
+primary key(userName, follower),
+foreign key(userName) references user(userName)
+);
+create table userFollowings(
+userName varchar(80),
+following varchar(80),
+foreign key(userName) references user(userName),
+primary key(userName, following)
+);
+
+CREATE TABLE posts (
+    postId INT AUTO_INCREMENT primary key,
+    userName VARCHAR(80),
+    caption varchar(300),
+    postSrc VARCHAR(300),
+    FOREIGN KEY (userName) REFERENCES user(userName)
+);
+
+create table postsComments(
+commentId int auto_increment,
+postId int,
+userName varchar(80),
+comment varchar(100),
+foreign key(userName) references user(userName),
+foreign key(postId) references posts(postId) ON DELETE CASCADE,
+primary key(commentId, postId)
+);
+
+create table postsLikes(
+postId int,
+userName varchar(80),
+foreign key(postId) references posts(postId) ON DELETE CASCADE,
+foreign key(userName) references user(userName),
+primary key(postId,userName)
+);
+
+select count(postId), count(follower), count(following) from posts p, userFollowers fo, userFollowings fi, user u
+group by p.userName, fo.userName, fi.userName, u.userName having u.userName = 'Rishabjain';
+
+SELECT
+    COUNT(DISTINCT p.postId) AS postCount,
+    COUNT(DISTINCT fo.follower) AS followerCount,
+    COUNT(DISTINCT fi.following) AS followingCount
+FROM
+    user u
+LEFT JOIN
+    posts p ON u.userName = p.userName
+LEFT JOIN
+    userFollowers fo ON u.userName = fo.userName
+LEFT JOIN
+    userFollowings fi ON u.userName = fi.userName
+WHERE
+    u.userName = 'Prekshajain'
+GROUP BY
+    u.userName;
+
+
+    select u.userName, postSrc, profile from user u, posts p
+    WHERE u.userName = p.userName;
+
+    select postid,caption,postsrc,u.username,profile from posts p, user u where p.username = u.username and postid=1;
+    
+
+
+
+
+
+
+
+<div class="account-info" onclick="get_profile('{{userName}}','{{#each ../data}}{{this.userName}}{{/each}}')">
+                        <div class="profile">
+                            <img src="" id="comt-user" alt="">
+                        </div>
+                        <div class="comments">
+                        <p id="commt-usrname"></p>
+                        <p id="commt">this is the comment</p>
+                        </div>
+                    </div>

@@ -1,0 +1,502 @@
+*{
+    font-size: 62.5%;
+    font-family: Poppins !important;
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    
+}
+p{
+    cursor: pointer;
+}
+.wrapper{
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    gap: 5em;
+}
+.logo{
+    width: 210em;
+    height: 85em;
+}
+
+.menu{
+    width: 22%;
+    padding: 6em 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20em;
+    border-right: 1.5px solid #dbdbdb;
+    height: 100%;
+    overflow-y: auto;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 10em;
+    
+    text-align: left;
+}
+nav ul li{
+    list-style: none;
+    font-size: 3rem;
+    width: 100%;
+    padding: 0.2em 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+nav ul li p{
+    font-size: 3rem;
+    width: 100%;
+}
+nav ul li p span{
+    font-size: 3rem;
+    width: 100%;
+}
+nav ul li img{
+    height: 2em;
+    width: 2em;
+}
+.bottom{
+    position: absolute;
+  bottom: 0;
+  margin-bottom: 0.5em;
+  width: fit-content;
+    padding: 0.2em 2em;
+
+}
+li:hover{
+    background-color: #dbdbdb;
+}
+
+section{
+    margin: 8em;
+}
+
+/*main section*/
+.main{
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 8em;
+}
+.main #home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5em;
+    gap: 8em;
+}
+.profiles{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8em;
+}
+.profile{
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    height: 300em;
+    width: 300em;
+}
+.profile img{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30em;
+}
+.user-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 8em;
+}
+.account-info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 70em;
+
+}
+.account-info p{
+    font-size: 4rem;
+}
+.account-img{
+    width: 380em;
+    height: 580em;
+    background-color: #dbdbdb;
+}
+.account-img img{
+    width: 100%;
+    height: 100%;
+}
+.account-video{
+    width: 810em;
+    height: 1210em;
+    background-color: #dbdbdb;
+}
+.account-video img{
+    width: 100%;
+    height: 100%;
+}
+.user-content .context{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 13em;
+}
+.user-content .context .action-btns{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50em;
+}
+.user-content .context .action-btns img{
+    height: 250em;
+    width: 250em;
+}
+.user-content .context .captions p{
+    font-size: 2.5rem;
+}
+#profile .container video, #explore .container video{
+    width: 450em;
+    height: 800em;
+}
+
+/*settings profile
+*/
+.card{
+    border: 1px solid #e6e6e6;
+    border-radius: 0.2em;
+    width: fit-content;
+    padding: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20em;
+}
+.sec-head{
+    font-size: 5rem;
+}
+
+/*profile section*/
+
+#profile .profile-info .account-info p{
+    font-size: 3rem;
+}
+#profile .profile-info .account-info p span{
+    font-size: 3rem;
+}
+#profile .profile-info .account-info{
+    gap: 35em;
+}
+#profile .profile-info .profile{
+    max-height: 250em;
+    max-width: 250em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#profile .profile-info .profile img{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+}
+.follow-list{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 80em;
+}
+.follow-list p{
+    font-size: 1.4rem;
+}
+#t-post,#t-followers, #t-following{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.edt-btn{
+    font-size: 1.5rem;
+    padding: 0.3em 0.8em;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
+.profile-info{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 50em;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    gap: 50em;
+}
+.personal h5{
+    font-size: 1.5rem;
+}
+.personal p{
+    font-size: 1.5rem;
+    width: 50%;
+}
+
+.container{
+    margin-top: 40em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 250em);
+    grid-template-rows: auto;
+    column-gap: 0.5em;
+    row-gap: 1.5em;
+    border-top: 2px solid #dbdbdb;
+    padding: 10em 0em;
+}
+/*uploadsection*/
+#upload .card form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150em;
+}
+.upload-filesec{
+    width: 45%;
+    height: 95%;
+
+}
+.upload-filesec .label, .label input{
+    width: 900em;
+    height: 1600em;
+
+}
+.upload-filesec .label:hover{
+    background-color: none;
+}
+.upload-filesec .label, .upload-filesec .label span img{
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-filesec .uploadlabel span img{
+    height: 1550em;
+    width: 1550em;
+}
+.label span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label.uploadlabel input[type="file"] {
+    position: absolute;
+    top: -1000px;
+  }
+  .uploadlabel {
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    padding: 5px 5px;
+    margin: 5px;
+    background: #ffffff;
+    display: inline-block;
+}
+  .uploadlabel:hover {
+    background: #5cbd95;
+  }
+  .uploadlabel:active {
+    background: #9fa1a0;
+  }
+  .uploadlabel:invalid + span {
+    color: #000000;
+  }
+  .uploadlabel:valid + span {
+    color: #ffffff;
+  }
+  #explore .search{
+    width: 90%;
+  }
+  #explore .search form button{
+    background: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #dbdbdb;
+    border: 1px solid #9fa1a0;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+  }
+
+.follow-unfollow .follow-btn{
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #4cb5f9;
+    border: 1px solid #4cb5f9;
+    border-radius: 1.5rem;
+    padding: 0.5em 3.8em;
+}
+
+/*comment tab*/
+
+.commenttab-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay background */
+    z-index: 1; /* Ensure it's above the main content */
+  }
+  
+  /* Styles for the .commenttab itself */
+  .commenttab {
+    background-color: #ffffff;
+    max-width: 80%;
+    max-height: 80%;
+    box-sizing: border-box;
+    min-height: 90vh;
+    z-index: 2;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 8em;
+  }
+.commenttab .account-video{
+    width: 45%;
+    height: 445em;
+    background-color: #ffffff;
+}
+.commenttab .account-video img{
+    max-width: 100%;
+    max-height: 88%;
+}
+
+.commenttab .account-video .action-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20em;
+}
+.commenttab .account-video .action-btns img{
+    height: 50em;
+    width: 50em;
+}
+.commenttab .context{
+    margin-top: 3em;
+    width: 55%;
+    
+}
+.commenttab .context .captions{
+    border-bottom: 1px solid #9fa1a0;
+    width: 95%;
+    padding: 8em;
+    margin-bottom: 10em;
+}
+
+.commenttab .context .comment .account-info .pro, .commenttab .context .captions .account-info{
+    gap: 15em;
+}
+.commenttab .context .comment .account-info .profile, .commenttab .context .captions .account-info .profile{
+    height: 150em;
+    width: 150em;
+}
+#post-username, #commt-usrname, #l-count, .action-btns p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#commt{
+    font-size: 1.5rem;
+}
+.commenttab .context .comment{
+    min-height: 88%;
+    border-bottom: 1px solid #9fa1a0;
+    padding: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30em;
+}
+.captions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.commenttab .context #cancel{
+    background-color: #ffffff;
+    border: #ffffff;
+    text-align: center;
+    font-size: 3rem;
+}
+.comment .account-info{
+    gap: 25em;
+}
+.context .form form .input-tag{
+    min-width: 80%;
+    background: none;
+    border-bottom: 1px solid #9fa1a0;
+}
+.context .form{
+    margin-top: 13em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+.context .form form{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 3em;
+    min-width: 100%;
+}
+.context .form form button{
+    background-color: #ffffff;
+    border: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.context .form form button img{
+    height: 100em;
+    width: 100em;
+}
+#get-comments{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30em;
+    overflow-y: auto;
+}
+

@@ -1,0 +1,21 @@
+{
+  "name": "insta_clone",
+  "version": "1.0.0",
+  "description": "This is an instagram clone social media but video first application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rushab Jain",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "formidable": "^3.5.1",
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1"
+  }
+}

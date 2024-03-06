@@ -1,0 +1,127 @@
+*{
+    font-size: 62.5%;
+    font-family: Poppins !important;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
+.card{
+    border: 1px solid #e6e6e6;
+    border-radius: 0.2em;
+    width: fit-content;
+    padding: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20em;
+}
+.logo{
+    width: 130em;
+    height: 50em;
+}
+.form{
+    min-width: 60%;
+}
+.form form,form .input-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+form{
+    gap:15em
+}
+.input-fields{
+    gap: 8em;
+}
+input{
+    min-width: 100%;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    font-size: 2.3rem;
+    padding: 0.8em;
+    border-radius: 0.3em;
+}
+form button{
+    min-width: 100%;
+    margin: 0;
+    padding: 0.2em 0.8em;
+    background-color: #4cb5f9;
+    font-size: 3rem;
+    color: white;
+    border-color: #4cb5f9;
+    box-shadow: none;
+    border-radius: 0.4em;
+    font-weight: bold;
+}
+.about{
+    margin: 0;
+    padding: 5em;
+}
+.about p,p a{
+    font-size: 2.4rem;
+}
+p a{
+    text-decoration: none;
+    color: #4cb5f9;
+    font-weight: bold;
+}
+
+/*signup*/
+.signup input{
+    min-width: 100%;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    font-size: 1.3rem;
+    padding: 0.8em;
+}
+.signup .info p{
+    min-width: 100%;
+    font-size: 1rem;
+    align-content: center;
+    
+}
+.info{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+.info-head{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15em;
+}
+.signup .logo{
+    width: 200em;
+    height: 85em;
+}
+.info-head p{
+    font-size: 1.8rem;
+    color: #84848d;
+}
+.signup .about p,p a{
+    font-size: 3rem;
+}
+
+.signup .about{
+    margin: 0;
+    padding: 5em 40em;
+}

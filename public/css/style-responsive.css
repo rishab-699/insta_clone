@@ -1,0 +1,113 @@
+@media (max-width:800px) {
+    .wrapper {
+        box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        gap: 5em;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .menu {
+        width: 100%;
+        padding: 2em 2em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20em;
+        border-top: 1.5px solid #dbdbdb;
+        max-height: 8%;
+        overflow-y: auto;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 3em;
+        text-align: left;
+    }
+    nav ul li:nth-child(3){
+        display: none;
+    }
+    .web-logo, nav ul li p, .bottom{
+        display: none;
+    }
+    .profile {
+        height: 200em;
+        width: 200em;
+    }
+    .content {
+        margin-top: 15em;
+    }
+    .account-info {
+        gap: 30em;
+    }
+    .account-info p {
+        font-size: 3.5rem;
+    }
+    .user-content .context .captions p {
+        font-size: 2rem;
+    }
+    .user-content {
+        
+        gap: 23em;
+    }
+    .container {
+        grid-template-columns: repeat(auto-fill, 124em);
+    }
+    .account-img {
+        width: 178em;
+        height: 342em;
+    }
+    #upload .card form {
+        flex-direction: column;
+    }
+    .submit {
+        margin: 0;
+        margin-top: 0.2em;
+    }
+    .card{
+        min-height: 95%;
+    }
+    #profile .profile-info .profile {
+        max-height: 150em;
+        max-width: 150em;
+    }
+    .profile-info {
+        gap: 16em;
+    }
+    #profile .profile-info .account-info p {
+        font-size: 2.5rem;
+    }
+    .edt-btn {
+        font-size: 1rem;
+        padding: 0.3em 0.8em;
+        border: 1px solid #dbdbdb;
+        outline: none;
+        border-radius: 0.5em;
+        font-weight: bold;
+    }
+    .user-details {
+        gap: 30em;
+    }
+    #profile-settings .card form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 140em;
+        flex-direction: column;
+    }
+    .stories{
+        padding: 10em;
+    }
+    .follow-unfollow .follow-btn {
+        font-size: 2rem;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #4cb5f9;
+        border: 1px solid #4cb5f9;
+        border-radius: 1.5rem;
+        padding: 0.2em 0.8em;
+    }
+}

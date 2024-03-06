@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Insta</title>
+    <link rel="stylesheet" href="style-home.css" />
+    <link rel="stylesheet" href="style-form.css"/>
+    <link rel="stylesheet" href="style-responsive.css"/>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="dataaddition.js"></script>
+    
+  </head>
+<body>
+    <div class="wrapper" id="maincontent">
+        <div class="menu">
+            <div class="web-logo">
+                <img src="Insta.svg" class="logo"/>
+            </div>
+            
+                <nav>
+                    <ul>
+                        <li onclick="home()"><img src="home.svg" alt=""/><p>Home</p></li>
+                        <li onclick="explore()"><img src="explore.svg" alt=""/><p>Explore</p></li>
+                        <li><img src="message.svg" alt=""/><p>Messages</p></li>
+                        <li><img src="like.svg" alt=""/><p>Notifications</p></li>
+                        <li onclick="upload()"><img src="upload.svg" alt=""/><p>Upload</p></li>
+                        <li onclick="profile()"><img src="user.svg" alt=""/><p>{{#each data}}{{this.userName}}{{/each}}</p></li>
+                        <li class="bottom">More</li>
+                    </ul>
+                </nav>
+            
+        </div>
+        
+        <div class="main" id="main">
+        <section id="home">
+            <div class="stories">
+                <div class="profiles">
+                    <div class="profile">
+                        <img src="{{#each data}}{{this.profile}}{{/each}}" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="content">
+                {{#each random}}
+  {{#with this}}
+    <div class="user-content">
+      <div class="account-info" onclick="get_profile('{{userName}}','{{#each ../data}}{{this.userName}}{{/each}}')">
+        <div class="profile">
+          <img src="{{profile}}" alt="">
+        </div>
+        <p>{{userName}}</p>
+      </div>
+      <div class="account-video">
+        <img src="{{postSrc}}" alt="">
+      </div>
+      <div class="context">
+        <div class="action-btns">
+          <img src="like.svg" id="like{{postId}}" onclick="postlikes('{{postId}}','{{#each ../data}}{{this.userName}}{{/each}}')" alt="">
+          <img src="liked.svg" id="dislike{{postId}}" style="display: none;" onclick="postdislikes('{{postId}}','{{#each ../data}}{{this.userName}}{{/each}}')" alt="">
+          <img src="comment.svg" onclick="comment('{{postId}}','{{#each ../data}}{{this.userName}}{{/each}}','{{userName}}')" alt="">
+        </div>
+        <div class="captions">
+          <p>{{caption}}</p>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+{{/each}}
+
+            </div>
+        </section>
+        <section id="profile">
+            <div class="profile-info">
+                <div class="profile">
+                    <img src="{{#each data}}{{this.profile}}{{/each}}" alt="">
+                </div>
+                <div class="user-details">
+                <div class="account-info">
+                    
+                    <p>{{#each data}}{{this.userName}}{{/each}}</p>
+
+                    <button class="edt-btn" onclick="settings()">
+                        EDIT PROFILE
+                    </button>
+                    
+                </div>
+                <div class="follow-list">
+                    <p> <span id="t-post">{{#each followlist}}{{this.postCount}}{{/each}}</span> posts</p>
+                    <p onclick="followerList('{{#each data}}{{this.userName}}{{/each}}')"><span id="t-followers">{{#each followlist}}{{this.followerCount}}{{/each}}</span> followers</p>
+                    <p onclick="followingList('{{#each data}}{{this.userName}}{{/each}}')"><span id="t-following">{{#each followlist}}{{this.followingCount}}{{/each}}</span> following</p>
+                </div>
+                <div class="personal">
+                    <h5>{{#each data}}{{this.fullName}}{{/each}}</h5>
+                    <p>{{#each data}}{{this.bio}}{{/each}}</p>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                {{#each posts}}
+                <div class="account-img">
+                    <img src="{{this.postSrc}}" alt=""/>
+                </div>
+                {{/each}}
+                
+            </div>
+        </section>
+        <section id="profile-settings">
+
+            <div class="card" id="profile">
+                <div class="sec-head">
+                    <h1>Profile Details</h1>
+                </div>
+                <form action="/home-update" method="POST" enctype="multipart/form-data">
+                    <div class="profile">
+                        <img src="Userprofile.svg" alt="">
+                        <label class="label">
+                            <input type="file" name="filetoupload"/>
+                            <span><img src="editicon.svg" class="file-icon" alt=""></span>
+                          </label>
+                    </div>
+                    <div class="userdetails">
+                        <input type="text" class="input-tag" name="userid" value="{{#each data}}{{this.userName}}{{/each}}" id="userid" readonly/>
+                        <input type="text" class="input-tag" name="username" value="{{#each data}}{{this.fullName}}{{/each}}" id="username"/>
+                        <textarea name="bio" id="bio" class="input-tag expand" cols="30" rows="3">Your bio here</textarea>
+                        <input type="email" class="input-tag expand" name="email" value="{{#each data}}{{this.email}}{{/each}}" id="email"/>
+                        <input type="text" class="input-tag expand" name="contactno" value="9876543210" id="contactno"/>
+                        <button type="submit" class="submit" name="submit" value="submit" id="submit">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="explore">
+            <div class="search">
+                <form action="/search">
+                    <input type="text" class="input-tag expand" name="username" id="username" placeholder="search account">
+                    <button type="submit" name="submit" value="submit">
+                        search
+                    </button> 
+                </form>
+            </div>
+            <div class="container">
+                {{#each random}}
+                <div class="account-img">
+                    <img src="{{this.postSrc}}" alt=""/>
+                </div>
+                {{/each}}
+            </div>
+
+        </section>
+        <section id="upload">
+             <div class="card" id="profile">
+                <div class="sec-head">
+                    <h1>upload file</h1>
+                </div>
+                <form action="/post-upload" method="POST" enctype="multipart/form-data">
+                    <div class="upload-filesec">
+                        <label class="uploadlabel">
+                            <input type="file" name="filetoupload" onchange="loadFile(event)" required/>
+                            <span><img src="upload.jpg" id="uploadfile" alt=""></span>
+                          </label>
+                    </div>
+                    <div class="userdetails">
+                        <textarea name="caption" id="caption" class="input-tag expand" placeholder="Enter caption here" cols="50" rows="3"></textarea>
+                        <input type="hidden" name="userid" id="userid" value="{{#each data}}{{this.userName}}{{/each}}">
+                        <button type="submit" class="submit" name="submit" value="submit" id="submit">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="temp_profile">
+            <div class="profile-info">
+                <div class="profile">
+                    <img id="temp_img" src="" alt="">
+                </div>
+                <div class="user-details">
+                <div class="account-info" id="temp_userName">
+                    
+                    <p ></p>
+                </div>
+                <div class="follow-list" id="counts">
+                    </div>
+                <div class="personal" id="personal">
+                </div>
+                <div class="follow-unfollow">
+                    <form action="/follow" id="follow" method="post">
+                        <input type="hidden" name="user" id="user" value="">
+                        <input type="hidden" name="follower" id="follower" value="{{#each data}}{{this.userName}}{{/each}}">
+                        <input type="submit" name="follow-button" value="follow" id="follow-button" class="follow-btn" />
+                        <input type="submit" name="follow-button" value="unfollow" id="unfollow-button" class="follow-btn" />
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+            <div class="container" id="posts">
+            </div>
+        </section>
+        </div>
+    </div>
+    <div class="commenttab-container" id="commenttab" style="display: none;">
+    <div class="commenttab"  >
+            <div class="account-video">
+                <img src="" id="post-user" alt="">
+                <div class="action-btns">
+                    <img src="like.svg" id="like{{postId}}" onclick="postlikes('{{postId}}','{{#each ../data}}{{this.userName}}{{/each}}')" alt="">
+                    <img src="liked.svg" id="dislike{{postId}}" style="display: none;" onclick="postdislikes('{{postId}}','{{#each ../data}}{{this.userName}}{{/each}}')" alt="">
+                    <p><span id="l-count"></span> likes</p>
+                    <img src="comment.svg" alt="">
+                </div>
+            </div>
+            <div class="context">
+                <div class="captions">
+                    
+                <div class="account-info" onclick="get_profile('{{userName}}','{{#each ../data}}{{this.userName}}{{/each}}')">
+                        
+                            <div class="profile">
+                                <img src="" id="postuser" alt="">
+                            </div>
+                            <p id="post-username"></p>
+                        
+                        </div>
+                        <button id="cancel" onclick="commenttab()">x</button>
+                    
+                </div>
+                <div class="comment">
+                    <div class="account-info" onclick="get_profile('{{userName}}','{{#each ../data}}{{this.userName}}{{/each}}')">
+                        <div class="profile">
+                            <img src="" id="comt-user" alt="">
+                        </div>
+                        <div class="comments">
+                        <p id="commt-usrname"></p>
+                        <p id="commt"></p>
+                        </div>
+                    </div>
+                    <div id="get-comments">
+
+                    </div>
+                </div>
+                <div class="form">
+                    <form action="/addcomment" method="post">
+                    <input type="hidden" id="p-id" name="postid" value="">
+                    <input type="hidden" name="username" value="{{#each data}}{{this.userName}}{{/each}}">
+                    <input type="text" class="input-tag expand" name="comment" id="comment" placeholder="add your comment">
+                    <button type="submit">
+                        <img src="message.svg" alt="">
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="commenttab-container" id="followerListtab" style="display: none;">
+            <div class="commenttab"  >
+                
+                    <div class="context">
+                        <div class="captions">
+                        
+                            
+                            <div class="comment">
+                                <button id="cancel" onclick="followertab()">x</button>
+                                <div id="get-followerList">
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+        <div class="commenttab-container" id="followingListtab" style="display: none;">
+            <div class="commenttab"  >
+                
+                    <div class="context">
+                        <div class="captions">
+                        
+                            
+                            <div class="comment">
+                                <button id="cancel" onclick="followingtab()">x</button>
+                                <div id="get-followingList">
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+        
+</body>
+</html>

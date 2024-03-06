@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Insta</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    {{#if result.res}}
+  <script>
+    alert("{{result.res}}");
+    console.log("{{result.res}}");
+  </script>
+{{/if}}
+    <div class="wrapper">
+      <div class="card">
+        
+          <img src="Insta.svg" class="logo"/>
+        
+        <div class="form">
+          <form action="/login" method="POST">
+            <div class="input-fields">
+              <input
+                type="text"
+                name="userID"
+                id="userID"
+                placeholder="User-Id,email"
+              />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+              />
+            </div>
+            <button type="submit" name="submit" value="submit" id="submit">Log In</button>
+          </form>
+        </div>
+      </div>
+      <div class="about card">
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+      </div>
+    </div>
+  </body>
+</html>

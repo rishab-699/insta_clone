@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Insta</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-form.css" />
+    <script src="app.js"></script>
+    <script src="dataaddition.js"></script>
+    <script src="formValidation.js" defer></script>
+    
+  </head>
+  <body onclick="getdata('{{data}}')">
+    
+
+
+    <div class="wrapper signup">
+      <div class="card signup">
+        <div class="info-head">
+          <img src="Insta.svg"  class="logo"/>
+          
+            <p>Sign up to see photos and videos from your friends.</p>
+          </div>
+        
+        <div class="form signup">
+          <form action="/signup" method="post"  id="signupForm" onsubmit="formvalidate()">
+    <div class="input-fields">
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="email"
+           required
+        />
+        <div class="error" id="emailErr"></div>
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          placeholder="Full Name"
+          required
+        />
+        <div class="error" id="nameErr"></div>
+        <input
+          type="text"
+          name="userID"
+          id="userID"
+          placeholder="Username"
+          required
+        />
+        <div class="error" id="userErr"></div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <div class="error" id="passwordErr"></div>
+    </div>
+    <div class="info">
+        <p>People who use our service may have uploaded your contact information to Instagram. Learn More</p>
+        <p>By signing up, you agree to our Terms, Privacy Policy, and Cookies Policy.</p>
+    </div>
+    <button type="submit" name="submit" value="submit" id="submit">Sign Up</button>
+</form>
+
+
+
+        </div>
+      </div>
+      <div class="about card">
+        <p>Have an account? <a href="/">Log In</a></p>
+      </div>
+    </div>
+  </body>
+</html>
